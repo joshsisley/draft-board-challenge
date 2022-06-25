@@ -1,0 +1,10 @@
+<div class="team-list">
+  <div *ngFor="let team of teams" class="team-list__team">
+    <div class="team-list__team--pick">
+      <label>Round 1 - Pick {{ team.pick }}</label>
+    </div>
+    <div class="team-list__team--name">
+      <h3>{{ team.name }}</h3>
+    </div>
+  </div>
+</div>

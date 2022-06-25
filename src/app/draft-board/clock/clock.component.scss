@@ -1,0 +1,29 @@
+.draft-board-on-the-clock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+  border-right: 1px solid #ccc;
+  padding-right: 1rem;
+  margin-right: 3rem;
+  padding-left: 1.6rem;
+  .draft-board-on-the-clock__team {
+    margin-right: 4rem;
+    label {
+      margin-bottom: 0;
+    }
+    h3 {
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+    }
+  }
+  .draft-board-on-the-clock__time {
+    font-size: 1.125rem;
+    font-weight: 400;
+    width: 2rem;
+  }
+  .warning {
+    color: #ff0000;
+  }
+}

@@ -1,0 +1,19 @@
+<div class="draft-board-container">
+  <div class="draft-board-container__team-list" *ngIf="(teams$ | async) as teams">
+    <!-- Clock -->
+    <app-on-the-clock (timeOut)="onTimeOut()" [reset]="resetTimer" [team]="teams[0]"></app-on-the-clock>
+    <!-- Team List -->
+    <app-team-list [teams]="teams"></app-team-list>
+  </div>
+
+  <div class="last-drafted-container">
+    <span *ngIf="(lastDrafted$ | async) as lastDrafted">
+      <h3>Pick {{ lastDrafted.pick }}: {{ lastDrafted.name }} draft {{ lastDrafted.draftedPlayers[0].name }} - Position: {{ lastDrafted.draftedPlayers[0].position }}</h3>
+    </span>
+  </div>
+
+  <div class="draft-board-container__player-list" *ngIf="(players$ | async) as players">
+    <!-- Player List -->
+    <app-player-list [players]="players" (selectPlayerEvent)="onSelectPlayer($event)"></app-player-list>
+  </div>
+</div>

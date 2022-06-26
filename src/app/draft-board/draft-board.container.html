@@ -1,19 +1,24 @@
-<div class="draft-board-container">
-  <div class="draft-board-container__team-list" *ngIf="(teams$ | async) as teams">
+<div class="draft-board-container" *ngIf="(teams$ | async) as teams">
+  <div *ngIf="teams.length" class="draft-board-container__team-list">
     <!-- Clock -->
     <app-on-the-clock (timeOut)="onTimeOut()" [reset]="resetTimer" [team]="teams[0]"></app-on-the-clock>
     <!-- Team List -->
-    <app-team-list [teams]="teams"></app-team-list>
+    <app-team-list class="hidden-mobile" [teams]="teams"></app-team-list>
   </div>
 
   <div class="last-drafted-container">
     <span *ngIf="(lastDrafted$ | async) as lastDrafted">
-      <h3>Pick {{ lastDrafted.pick }}: {{ lastDrafted.name }} draft {{ lastDrafted.draftedPlayers[0].name }} - Position: {{ lastDrafted.draftedPlayers[0].position }}</h3>
+      <span class="last-drafted-container__pick hidden-mobile">Pick {{ lastDrafted.pick }}:</span>
+      <span class="last-drafted-container__name">{{ lastDrafted.name }} draft {{ lastDrafted.draftedPlayers[0].name }}</span>
+      <span class="last-drafted-container__position hidden-mobile">Position: {{ lastDrafted.draftedPlayers[0].position }}</span>
     </span>
   </div>
 
   <div class="draft-board-container__player-list" *ngIf="(players$ | async) as players">
+    <mat-card *ngIf="!players.length" class="app-card">
+      <app-success [message]="'Draft Complete!'"></app-success>
+    </mat-card>
     <!-- Player List -->
-    <app-player-list [players]="players" (selectPlayerEvent)="onSelectPlayer($event)"></app-player-list>
+    <app-player-list *ngIf="players.length" [players]="players" (selectPlayerEvent)="onSelectPlayer($event)"></app-player-list>
   </div>
 </div>

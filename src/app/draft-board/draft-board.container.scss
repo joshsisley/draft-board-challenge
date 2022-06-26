@@ -11,11 +11,40 @@
   .last-drafted-container {
     background: #01336a;
     color: #fff;
-    padding: 1rem;
     text-align: center;
+    height: 60px;
+    line-height: 60px;
     h3 {
       font-weight: 400;
       margin: 0;
     }
+    span {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      word-spacing: 0.1rem;
+    }
+    .last-drafted-container__pick {
+      margin-right: 1rem;
+    }
+    .last-drafted-container__name {
+      margin-right: 1rem;
+    }
+  }
+  .app-card {
+    background: #ffffff;
+    box-shadow: none;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 3rem 1rem;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 4rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .draft-board-container__team-list {
+    grid-template-columns: 1fr !important;
   }
 }

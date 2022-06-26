@@ -16,6 +16,8 @@
     h3 {
       margin-top: 0.5rem;
       margin-bottom: 0;
+      font-weight: 600;
+      font-size: 18px;
     }
   }
   .draft-board-on-the-clock__time {
@@ -25,5 +27,11 @@
   }
   .warning {
     color: #ff0000;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .draft-board-on-the-clock {
+    margin-right: 0;
   }
 }

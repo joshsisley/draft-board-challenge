@@ -45,12 +45,7 @@ export class DraftBoardService {
   }
 
   getDisplayedTeams() {
-    if (this.onTheClockIndex <= 1) {
-      this.displayedTeams$.next([...this.teams.slice(0,5)]);
-    } else if (this.onTheClockIndex <= this.teams.length - 1 && this.onTheClockIndex >= this.teams.length - 2) {
-      this.displayedTeams$.next([...this.teams.slice(this.teams.length - 5, this.teams.length - 1)]);
-    } else {
-      this.displayedTeams$.next([...this.teams.slice(this.onTheClockIndex - 2, this.onTheClockIndex + 3)]);
-    }
+    const nextTeams = this.teams.slice(this.onTheClockIndex, this.onTheClockIndex + 5);
+    this.displayedTeams$.next([...nextTeams]);
   }
 }

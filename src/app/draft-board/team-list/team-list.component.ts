@@ -13,7 +13,5 @@ export class TeamListComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.teams);
-  }
+  ngOnInit() {}
 }

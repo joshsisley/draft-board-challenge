@@ -8,8 +8,10 @@ import { DraftBoardContainer } from './draft-board.container';
 import { PlayerListComponent } from './player-list/player-list.component';
 import { TeamListComponent } from './team-list/team-list.component';
 
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
-  imports: [BrowserModule, FormsModule, DraftBoardRoutingModule],
+  imports: [BrowserModule, SharedModule, DraftBoardRoutingModule],
   exports: [],
   declarations: [DraftBoardContainer, TeamListComponent, PlayerListComponent, ClockComponent],
   providers: [],

@@ -11,7 +11,7 @@ export class ClockComponent implements OnInit {
   @Input() reset: boolean = false;
   @Input() team!: Team;
   @Output() timeOut = new EventEmitter();
-  seconds: number = 30;
+  seconds: number = 10;
   interval: any;
   constructor() { }
 
@@ -20,8 +20,8 @@ export class ClockComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.reset.currentValue && !changes.reset.previousValue) {
-      this.seconds = 30;
+    if (changes.reset && changes.reset.currentValue && !changes.reset.previousValue) {
+      this.seconds = 10;
       clearInterval(this.interval);
       this.timer();
     }

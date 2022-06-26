@@ -12,7 +12,7 @@
       "team-pick"
       "team-name";
     height: 100%;
-    background: #f5f5f5;
+    background: #ffffff;
     .team-list__team--pick {
       grid-area: team-pick;
       border-bottom: 1px solid #ccc;
@@ -29,7 +29,17 @@
       h3 {
         margin: 0;
         line-height: 55px;
+        font-weight: 600;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .team-list {
+    grid-template-columns: 1fr !important;
+    .team-list__team {
+      border: 1px solid #ccc;
     }
   }
 }

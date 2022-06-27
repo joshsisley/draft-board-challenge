@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:github": "ng build --output-path docs --baseHref='/draft-board-challenge/'",
     "watch": "ng build --watch --configuration development"
   },
   "dependencies": {
